@@ -2,3 +2,4 @@
 /dist
 /.gulp-scss-cache
 package-lock.json
+/.cache
