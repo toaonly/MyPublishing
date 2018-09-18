@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,600');
+
+html, body {
+  margin: 0;
+  padding: 1rem;
+  font-size: 16px;
+  font-family: 'Prompt';
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.checkbox-wrap {
+  $width: 80px;
+
+  display: inline-block;
+  width: $width;
+  height: $width / 2;
+  background: #aaa;
+  border: 1px solid #aaa;
+  border-radius: $width / 2;
+
+  .label-wrap {
+    position: relative;
+    line-height: $width / 2;
+
+    label {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      font-size: 1rem;
+      color: #fff;
+      box-sizing: border-box;
+      user-select: none;
+      z-index: 2;
+
+      &.off {
+        padding-right: 6px;
+        text-align: right;
+      }
+
+      &.on {
+        padding-left: 6px;
+        text-align: left;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: $width / 2 - 6;
+      height: $width / 2 - 6;
+      border-radius: 50%;
+      border: 1px solid #aaa;
+      background: #fff;
+      content: '';
+      z-index: 1;
+      transition: all .5s ease;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    &+.label-wrap {
+      .off {
+        display: none;
+      }
+    }
+
+    &:checked+.label-wrap {
+      .on {
+        display: none;
+      }
+      .off {
+        display: inline-block;
+      }
+
+      &:after {
+        transform: translateX(-$width / 2);
+      }
+    }
+  }
+}
