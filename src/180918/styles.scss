@@ -36,21 +36,21 @@ h1, h2, h3 {
       user-select: none;
       z-index: 2;
 
-      &.off {
-        padding-right: 6px;
-        text-align: right;
-      }
-
-      &.on {
+      &.to-off {
         padding-left: 6px;
         text-align: left;
+      }
+
+      &.to-on {
+        padding-right: 6px;
+        text-align: right;
       }
     }
 
     &:after {
       position: absolute;
       top: 2px;
-      right: 2px;
+      left: 2px;
       width: $width / 2 - 6;
       height: $width / 2 - 6;
       border-radius: 50%;
@@ -65,22 +65,22 @@ h1, h2, h3 {
   input[type="checkbox"] {
     display: none;
 
-    &:checked+.label-wrap {
-      .on {
+    &+.label-wrap {
+      .to-off {
         display: none;
       }
-      .off {
+    }
+
+    &:checked+.label-wrap {
+      .to-on {
+        display: none;
+      }
+      .to-off {
         display: inline-block;
       }
 
       &:after {
-        transform: translateX(-$width / 2);
-      }
-    }
-
-    &+.label-wrap {
-      .off {
-        display: none;
+        transform: translateX($width / 2);
       }
     }
   }
