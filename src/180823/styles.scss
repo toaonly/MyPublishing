@@ -1,0 +1,255 @@
+$login-button-color: #3c5bfe;
+$signup-button-color: #161b29;
+
+$background-color: #1e2538;
+
+$font-color-1: #c3c4c8;
+$font-color-2: #717682;
+
+$min-width: 1280px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  font-size: 14px;
+  color: $font-color-1;
+}
+
+body {
+  background-color: $background-color;
+}
+
+button {
+  position: relative;
+  height: 38px;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: $font-color-1;
+  outline: none;
+}
+
+.app-wrap {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: $min-width;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+
+  & > header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 38px 34px;
+    width: 100%;
+    min-width: $min-width;
+    height: 48px;
+    box-sizing: border-box;
+
+    nav {
+      position: relative;
+
+      .backbutton-wrap {
+        position: absolute;
+        top: 5px;
+        left: 0;
+
+        button {
+          opacity: .8;
+
+          i {
+            vertical-align: -7px;
+          }
+        }
+      }
+
+      .logo-wrap {
+        margin: 0 auto;
+        width: 48px;
+        height: 48px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 50%;
+      }
+
+      .signup-wrap {
+        position: absolute;
+        top: 5px;
+        right: 0;
+
+        button {
+          margin: 0 8px;
+          opacity: .8;
+          
+          &.btn-signup {
+            margin-right: 0;
+            width: 120px;
+            background-color: $signup-button-color;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .container-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: $min-width;
+
+    .signin-form-wrap {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+
+      .form-wrap {
+        flex: 1;
+        
+        .signin-box-wrap {
+          margin: 0 auto;
+          width: 480px;
+
+          .fields {
+            display: flex;
+            
+            .field {
+              flex: 1;
+            }
+          }
+
+          .field {
+            position: relative;
+            margin-bottom: 24px;
+
+            & > label {
+              position: absolute;
+              top: 14px;
+              left: 0;
+              font-size: 2rem;
+              opacity: .8;
+            }
+
+            &.aligned.right {
+              text-align: right;
+            }
+
+            .btn-login {
+              margin-top: 10px;
+              width: 140px;
+              height: 38px;
+              background-color: $login-button-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 90px;
+    width: 100%;
+    text-align: center;
+
+    a {
+      position: relative;
+      font-size: 1.3rem;
+      color: transparentize($font-color-1, .7);
+      text-decoration: none;
+
+      &:after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed transparentize($font-color-1, .9);
+        content: '';
+      }
+    }
+  }
+}
+
+.input-wrap {
+  position: relative;
+  padding-left: 42px;
+  width: 100%;
+  box-sizing: border-box;
+  
+  input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    height: 48px;
+    line-height: 49px;
+    border-bottom: 1px solid transparentize($font-color-1, .8);
+    font-size: 1rem;
+    color: #efefef;
+    outline: none;
+
+    &::placeholder {
+      color: #9a9a9a;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    font-size: 1.3rem;
+    color: #229961;
+  }
+}
+
+.checkbox-wrap {
+  position: relative;
+  padding-left: 42px;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &+label {
+      display: block;
+      line-height: 48px;
+      color: transparentize($font-color-1, .4);
+
+      i {
+        position: absolute;
+        top: 12px;
+        left: 5px;
+        font-size: 1.5rem;
+        color: $font-color-1;
+
+        &.blank {
+          display: inline;
+        }
+
+        &.checked {
+          display: none;
+        }
+      }
+    }
+
+    &:checked+label {
+      i.blank {
+        display: none;
+      }
+
+      i.checked {
+        display: inline;
+      }
+    }
+  }
+}
