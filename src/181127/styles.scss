@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h3, p { margin: 0; }
+
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.dimmer-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+
+  .modal-wrapper {
+    flex: 1;
+    width: 100%;
+    height: 370px;
+
+    .modal {
+      $radius: 4px;
+
+      display: flex;
+      margin: 0 auto;
+      width: 560px;
+      height: 370px;
+      border-radius: $radius;
+      background: #fff;
+      flex-direction: column;
+
+      header {
+        flex: 1;
+        flex-basis: 196px;
+        background: #E2747E;
+        border-top-right-radius: $radius;
+        border-top-left-radius: $radius;
+
+        .close-mark {
+          position: relative;
+          margin: calc(calc(196px - 96px) / 2) auto;
+          width: 96px;
+          height: 96px;
+          border: 6px solid #fff;
+          border-radius: 50%;
+          box-sizing: border-box;
+
+          i {
+            position: absolute;
+            top: calc(calc(84px - 75px) / 2);
+            left: calc(calc(84px - 75px) / 2);
+            font-size: 75px;
+            color: #fff;
+          }
+        }
+      }
+
+      .contents-wrapper {
+        flex: 1;
+        flex-basis: calc(370px - 196px);
+        padding: 30px 0;
+        background: #fff;
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+        text-align: center;
+        box-sizing: border-box;
+        line-height: 30px;
+        color: #3E495F;
+
+        h3 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .btn-close {
+          margin-top: 14px;
+          width: 116px;
+          height: 40px;
+          background: #E2747E;
+          border-radius: 20px;
+          font-size: 14px;
+          color: #fff;
+
+          i {
+            vertical-align: middle;
+            // font-size: 21px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

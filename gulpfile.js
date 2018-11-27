@@ -6,7 +6,6 @@ const minify = require('gulp-clean-css');
 const sass = require('gulp-sass');
 const less = require('gulp-less');
 const stylus = require('gulp-stylus');
-const serverIO = require('gulp-server-io');
 
 const PATH = {
   HTML: 'src/**/*.html',
@@ -58,18 +57,6 @@ gulp.task('watch', () => {
   gulp.watch(PATH.LESS, [ 'less' ]);
   gulp.watch([ PATH.SASS, PATH.SCSS ], [ 'sass' ]);
   gulp.watch(PATH.STYLUS, [ 'stylus' ]);
-});
-
-gulp.task('server', () => {
-  return gulp.src([ 'src/index.html', PATH.HTML ])
-    .pipe(serverIO({
-      port: 8080,
-      webroot: 'src',
-      serverReload: {
-        dir: 'src/index.html',
-        config: { debounce: 1000 }
-      }
-    }));
 });
 
 gulp.task('default', [ 'babel', 'less', 'sass', 'stylus', 'watch' ])
