@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../dist/181222/styles.css">
+  <title>Modal UI</title>
+  <script src="../../dist/index.js"></script>
+</head>
+<body>
+<div class="app-wrapper">
+  <div class="dimmer-wrapper">
+    <div class="modal-wrapper">
+      <div class="modal">
+        <header>
+          <h3>New Project</h3>
+          <div class="btn-close">
+            <i class="material-icons">close</i>
+          </div>
+        </header>
+        <div class="container">
+          <div class="field">
+            <div class="label-wrapper">
+              <label for="name">Project Name</label>
+            </div>
+            <div class="input-wrapper">
+              <input type="text" id="name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label-wrapper">
+              <label>Choose Project Type</label>
+            </div>
+            <div class="list-wrapper">
+              <div class="item active">
+                <img src="./imgs/icon_desktop.png" alt="Desktop" />
+                <span>Desktop/Web</span>
+              </div>
+              <div class="item">
+                <img src="./imgs/icon_iphone.png" alt="iPhone" />
+                <span>iPhone</span>
+              </div>
+              <div class="item">
+                <img src="./imgs/icon_android.png" alt="Android" />
+                <span>Android</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action">
+            <button type="button" class="btn-cancel">Cancel</button>
+            <button type="button" class="btn-create">Create Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

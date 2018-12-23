@@ -1,7 +1,10 @@
+const path = require('path');
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sourcemaps = require('gulp-sourcemaps');
+const compiler = require('webpack');
+const webpack = require('webpack-stream');
 const minify = require('gulp-clean-css');
 const sass = require('gulp-sass');
 const less = require('gulp-less');
@@ -18,11 +21,16 @@ const PATH = {
 
 gulp.task('babel', () => {
   gulp.src(PATH.JS)
-    .pipe(babel({
-      presets: ['@babel/env']
+    // .pipe(babel({
+    //   presets: ['@babel/env'],
+    //   plugins: ['@babel/transform-runtime', '@babel/polyfill']
+    // }))
+    // .pipe(sourcemaps.write('.'))
+    .pipe(webpack({
+      config: require('./webpack.config.js')
+    }, compiler, function(err, stats) {
+      
     }))
-    .pipe(concat(`chunk${(new Date).getTime()}.js`))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'));
 });
 
